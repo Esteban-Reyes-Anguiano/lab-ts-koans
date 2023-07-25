@@ -1,44 +1,44 @@
 describe('TypeScript Koans - Test Suite 1', () => {
-  // it('type inference', () => {
+  it('type inference', () => {
   //   Koan 1: TypeScript can infer the type of a variable
-  //   const message = 'Hello, TypeScript!';
+    const message = 'Hello, TypeScript!';
 
   //   Failing Test 1: Uncomment the expect statement below and provide the expected type
-  //   expect(typeof message).toEqual('string');
+    expect(typeof message).toEqual('string');
 
   //   Koan 2: TypeScript can also infer the type of variables based on their initial value
-  //   const count = 42;
+    const count = 42;
 
   //   Failing Test 2: Uncomment the expect statement below and provide the expected type
-  //   expect(typeof count).toEqual('number');
+    expect(typeof count).toEqual('number');
 
   //   Koan 3: TypeScript can infer multiple types for a union type
-  //   const numberOrString: number | string = Math.random() > 0.5 ? 42 : 'forty-two';
+    const numberOrString: number | string = Math.random() > 0.5 ? 42 : 'forty-two';
 
   //   Failing Test 3: Uncomment the expect statement below and provide the expected type
-  //   expect(typeof numberOrString).toEqual('number' || 'string');
-  //   if (typeof numberOrString === 'number') {
-  //     Success: numberOrString is of type 'number'
-  //   } else if (typeof numberOrString === 'string') {
-  //     Success: numberOrString is of type 'string'
-  //   } else {
-  //     Handle unexpected case
-  //     fail('Unexpected type');
-  //   }
+    expect(typeof numberOrString).toEqual('number' || 'string');
+    if (typeof numberOrString === 'number') {
+      // Success: numberOrString is of type 'number'
+    } else if (typeof numberOrString === 'string') {
+      // Success: numberOrString is of type 'string'
+    } else {
+      // Handle unexpected case
+      fail('Unexpected type');
+    }
 
   //   Koan 4: TypeScript can infer the type from the result of an arithmetic operation
-  //   const result = 5 / Number("a");
+    const result = 5 / Number("a");
 
   //   Failing Test 4: Uncomment the expect statement below and provide the expected type
-  //   expect(typeof result).toEqual('number');
-  //   expect(result).toEqual(NaN);
+    expect(typeof result).toEqual('number');
+    expect(result).toEqual(NaN);
   //   Koan 5: TypeScript can infer the type when using isNaN function
-  //   const nanCheck = isNaN(5 / Number("a"));
+    const nanCheck = isNaN(5 / Number("a"));
 
   //   Failing Test 5: Uncomment the expect statement below and provide the expected type
-  //   expect(typeof nanCheck).toEqual('boolean');
-  //   expect(nanCheck).toBeTruthy();
-  // });
+    expect(typeof nanCheck).toEqual('boolean');
+    expect(nanCheck).toBeTruthy();
+  });
 });
 
 // Define an interface representing a user object
@@ -69,8 +69,7 @@ describe('TypeScript Koans - Test Suite 2', () => {
     expect(user.age).toEqual(30);
     expect(user.email).toEqual('john@example.com');
     expect(user.isAdmin).toEqual(true);
-    expect(user.address).toEqual('123 Main St'); // New expect statement for the address property
-
+    expect(user.address).toEqual('123 Main St'); 
     // Koan 2: Modifying object properties
     user.name = 'Jane Smith';
     user.age = 25;
