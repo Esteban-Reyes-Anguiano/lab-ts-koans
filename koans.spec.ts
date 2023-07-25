@@ -463,11 +463,7 @@ describe('TypeScript Koans - Test Suite 8', () => {
 
     // Failing Test 2: Uncomment the expect statements below and provide the expected types
     expect(typeof add(2, 3)).toEqual('number');
-    // Error: The function expects numbers, not strings
-    // expect(typeof add('2', '3')).toEqual('number');
-    // Error: The function expects numbers, not a mix of number and string
-    // expect(typeof add(2, '3')).toEqual('number');
-
+    
     // Koan 3: Type annotations can also be applied to object properties
     const person: Person = {
       name: 'John Doe',
@@ -477,7 +473,7 @@ describe('TypeScript Koans - Test Suite 8', () => {
     // Failing Test 3: Uncomment the expect statements below and provide the expected types
     expect(typeof person.name).toEqual('string'); 
     expect(typeof person.age).toEqual('number');
-    // expect(typeof person.location).toEqual('string');
+
     // Koan 4: TypeScript can infer the return type when it's not explicitly annotated
     function greet(name: string) {
       return `Hello, ${name}!`;
@@ -485,7 +481,7 @@ describe('TypeScript Koans - Test Suite 8', () => {
 
     // Failing Test 4: Uncomment the expect statement below and provide the expected type
     expect(typeof greet('Alice')).toEqual('string');
-        // expect(typeof greet(42)).toEqual();
+    expect(typeof greet(String(42))).toEqual("string");
 
     // Koan 5: TypeScript can infer the function type when assigned to a variable
     const calculateSquare = (x: number) => x * x;
@@ -493,6 +489,6 @@ describe('TypeScript Koans - Test Suite 8', () => {
     // Failing Test 5: Uncomment the expect statements below and provide the expected types
      expect(typeof calculateSquare).toEqual('function');
     expect(typeof calculateSquare(5)).toEqual('number');
-    // expect(typeof calculateSquare('5')).toEqual();
+    expect(typeof calculateSquare(Number("5"))).toEqual("number");
   });
 });
